@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Login</title>
+
+  {% load static %}
+
+  <!-- Bootstrap core CSS-->
+  <link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static '/info/bootstrap/css/sb-admin.css' %}" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url("{% static 'info/images/gallery-2.jpg' %}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .card-login {
+      background-color: rgba(255, 255, 255, 0.9); /* Add transparency */
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header text-center">
+        <h3>Login</h3>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-success btn-block" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static '/info/bootstrap/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/info/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static '/info/bootstrap/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+</body>
+
+</html>
